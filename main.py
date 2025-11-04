@@ -138,11 +138,16 @@ class Bulldog(Dog):
         print("guarding")
 
 
+class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def add(self, a, b, c):
+        return a + b + c
 
-#Multilevel inheritance
+#Polymorphism: method overloading not suported
 
 
-bd = Bulldog()
-bd.speak()
-bd.bark()
-bd.guard()
+calc = Calculator()
+print(calc.add(2, 3, 4))
+print(calc.add(2,4))
