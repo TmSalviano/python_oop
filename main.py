@@ -125,8 +125,24 @@ class StudentUser(User, Student):
         User.__init__(self, username, email)
         Student.__init__(self, student_id, courses)
 
-student_user = StudentUser("niloy islam", "niloy@gmail.com", "S12345", ["Math", "Physics"])
-student_user.register()
-student_user.login()
-student_user.review()
-student_user.enroll()
+class Animal:
+    def speak(self):
+        print("speaking")
+
+class Dog(Animal):
+    def bark(self):
+        print("barking")
+
+class Bulldog(Dog):
+    def guard(self):
+        print("guarding")
+
+
+
+#Multilevel inheritance
+
+
+bd = Bulldog()
+bd.speak()
+bd.bark()
+bd.guard()
