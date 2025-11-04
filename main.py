@@ -139,15 +139,35 @@ class Bulldog(Dog):
 
 
 class Calculator:
+
     def add(self, a, b):
         return a + b
     
     def add(self, a, b, c):
         return a + b + c
 
-#Polymorphism: method overloading not suported
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside the Phone constructor")
+        self.price = price
+        self.brand = brand
+        self.camera = camera
+    
+    def buy(self):
+        print("Buying a phone")
 
+class SmartPhone(Phone):
+    def __init__(self, price, brand, camera, os, ram):
+        super().__init__(price, brand, camera)
+        self.os = os
+        self.ram = ram
+        print("Inside smartphone constructor")
+    
+    def buy(self):
+        print("Buying a smartphone")
+        super().buy()
+    
+#super() 
 
-calc = Calculator()
-print(calc.add(2, 3, 4))
-print(calc.add(2,4))
+sp = SmartPhone(1000, "Iphone", "S3fjkdjkjd", "IOS", "36")
+sp.buy()
