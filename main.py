@@ -76,4 +76,32 @@ class Atm:
     def check_balance(self):
         print(self.__balance)
         
-obj = Atm()
+class Customer:
+    def __init__(self, name, age, address):
+        self.name = name
+        self.age = age
+        self.address = address
+        
+    def edit_profile(self, name, age, city, pin, estate):
+        self.name = name
+        self.age = age
+        self.address.change_address(city, pin, estate)
+
+class Address:
+    def __init__(self, city, pin, state):
+        self.city = city
+        self.pin = pin
+        self.state = state
+
+    def change_address(self, city, pin, state):
+        self.city = city
+        self.pin = pin
+        self.state = state
+        
+    
+
+add = Address("juiz de fora", 1010, "Minas Gerais")
+cust = Customer("Tiago", "24", add)
+print(cust.address.city)
+cust.edit_profile("Ronaldo", 25, "Belo HOrizonte", 2345 , "Minas Gerais")
+print(cust.address.city)
