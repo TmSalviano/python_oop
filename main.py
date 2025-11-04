@@ -98,10 +98,35 @@ class Address:
         self.pin = pin
         self.state = state
         
-    
+class User:
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
 
-add = Address("juiz de fora", 1010, "Minas Gerais")
-cust = Customer("Tiago", "24", add)
-print(cust.address.city)
-cust.edit_profile("Ronaldo", 25, "Belo HOrizonte", 2345 , "Minas Gerais")
-print(cust.address.city)
+    def login(self):
+        print(f"{self.username} logged in")
+
+    def register(self):
+        print(f"{self.username} has register")
+
+class Student:
+    def __init__(self, student_id, courses):
+        self.student_id = student_id
+        self.courses = courses
+
+    def enroll(self):
+        print(f"Student {self.student_id} has enrolled in courses")
+
+    def review(self):
+        print(f"Student {self.student_id} is revewing courses")
+
+class StudentUser(User, Student):
+    def __init__(self, username, email, student_id, courses):
+        User.__init__(self, username, email)
+        Student.__init__(self, student_id, courses)
+
+student_user = StudentUser("niloy islam", "niloy@gmail.com", "S12345", ["Math", "Physics"])
+student_user.register()
+student_user.login()
+student_user.review()
+student_user.enroll()
